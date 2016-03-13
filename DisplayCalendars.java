@@ -54,6 +54,27 @@ public class DisplayCalendars {
 	}
 
 
+	//print the month body
+	public void printMonthBody() {
+		//print the space before the first day of the monty
+	    for (int i = 0; i < gregorianCalendar.get(GregorianCalendar.DAY_OF_WEEK) - 1; i++){
+	      	System.out.print("    ");
+	      	weekOfDate++;
+	    }
+
+		//print the day
+	    for (int i = 1; i <= getNumberOfDaysInMonth(); i++) {
+	      	System.out.printf("%4d", i);
+			weekOfDate++;
+			//print to the next line when the line has seven days
+	    	if (weekOfDate % 7 == 0){
+	        	System.out.println();
+	    	}
+	    }
+	    System.out.println();
+	}
+
+
 	//get the number of days in the month
 	public int getNumberOfDaysInMonth() {
 	    if (month == 1 || month == 3 || month == 5 || month == 7 ||
